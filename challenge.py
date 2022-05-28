@@ -39,11 +39,11 @@ while True:
 			else:
 				md_bid_price = md['marketData']['BI'][0]['price']
 				print('Precio de BID: $' + str(md_bid_price))
-				print('Ingresando orden a: $' + str(round(md_bid_price-0.1,5)))
+				print('Ingresando orden a: $' + str(round(md_bid_price-0.01,5)))
 				order = pyRofex.send_order(ticker = symbol,
 			                           side = pyRofex.Side.BUY,
 			                           size = 1,
-			                           price = round(md_bid_price-0.1,5),
+			                           price = round(md_bid_price-0.01,5),
 			                           order_type = pyRofex.OrderType.LIMIT)
 
 		print('Cerrando sesión en Remarkets')
